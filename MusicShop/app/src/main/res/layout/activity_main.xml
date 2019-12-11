@@ -1,181 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     tools:context=".MainActivity"
     >
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        />
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".MainActivity"
         >
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/Shop"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/shop"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#000"
+                android:rotation="-20"
+                android:text="SALE 50%"
+                android:textColor="#FFF"
+                android:textSize="50sp"
+                app:fontFamily="@font/aclonica"
+                />
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginRight="20dp"
+            android:text="Select item"
+            android:textColor="#000"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
         <ImageView
-            android:id="@+id/Shop"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/shop"
+            android:src="@drawable/fee4868b26201c631ccc34774ec53651"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="#000"
-            android:rotation="-20"
-            android:text="SALE 50%"
-            android:textColor="#FFF"
-            android:textSize="50sp"
-            app:fontFamily="@font/aclonica"
-            />
+            android:gravity="center_vertical|top"
+            android:orientation="horizontal"
+            >
 
-    </RelativeLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginRight="20dp"
-        android:text="Select item"
-        android:textColor="#000"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        />
+                <TextView
+                    android:id="@+id/order"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:text="Order Price"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+                <TextView
+                    android:id="@+id/summOrder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="0$"
+                    android:textColor="#000"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/fee4868b26201c631ccc34774ec53651"
-        />
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                >
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+                <TextView
+                    android:id="@+id/quantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:paddingBottom="10dp"
+                    android:text="Quantity"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    />
 
-        <TextView
-            android:id="@+id/order"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Order Price"
-            android:textColor="#000"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            />
+                <Button
+                    android:id="@+id/minus"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/quantity"
+                    android:layout_alignBaseline="@+id/quantitySumm"
+                    android:layout_toLeftOf="@id/quantitySumm"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="-"
+                    android:textColor="#FFF"
+                    android:textSize="25dp"
+                    />
 
-        <TextView
-            android:id="@+id/summOrder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/order"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="10dp"
-            android:text="0"
-            android:textColor="#000"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            />
+                <TextView
+                    android:id="@+id/quantitySumm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/quantity"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="setQuantity"
+                    android:padding="16dp"
+                    android:text="0"
+                    android:textColor="#000"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    />
 
-        <TextView
-            android:id="@+id/current"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/order"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/summOrder"
-            android:text="$"
-            android:textColor="#000"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            />
-
-        <TextView
-            android:id="@+id/quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
-            android:layout_toRightOf="@id/order"
-            android:text="Quantity"
-            android:textColor="#000"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            />
+                <Button
+                    android:id="@+id/plus"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/quantity"
+                    android:layout_alignBaseline="@+id/quantitySumm"
+                    android:layout_toRightOf="@id/quantitySumm"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="+"
+                    android:textColor="#FFF"
+                    android:textSize="25dp"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
 
         <Button
-            android:id="@+id/minus"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_below="@id/quantity"
-            android:layout_marginLeft="165dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/current"
-            android:background="@color/colorPrimaryDark"
-            android:text="-"
-            android:textColor="#FFF"
-            android:textSize="25dp"
-            />
-
-        <TextView
-            android:id="@+id/quantitySumm"
-            android:layout_width="wrap_content"
+            android:id="@+id/addToCart"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/quantity"
-            android:layout_marginLeft="17dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/minus"
-            android:onClick="setQuantity"
-            android:text="0"
-            android:textColor="#000"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            />
-
-        <Button
-            android:id="@+id/plus"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_below="@id/quantity"
-            android:layout_marginLeft="17dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/quantitySumm"
+            android:layout_marginTop="35dp"
             android:background="@color/colorPrimaryDark"
-            android:text="+"
+            android:text="ADD TO CART"
             android:textColor="#FFF"
-            android:textSize="25dp"
             />
-
-    </RelativeLayout>
-
-    <Button
-        android:id="@+id/addToCart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="ADD TO CART"
-        android:textColor="#FFF"
-        />
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
